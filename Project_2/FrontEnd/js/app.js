@@ -30,6 +30,7 @@ const generateHTML = ( object ) => {
             <p class="info">Combustible: ${object.combustible}</p>
             <p class="price">Precio:<strong> ${object.precio} € </strong></p>
             <p class="origen">${object.coche}</p>
+            <button type="button" class="btn" id="button" onClick="buttonClick()">Informacion</button>
         </div>
     </div>
     `;
@@ -38,6 +39,13 @@ const generateHTML = ( object ) => {
 
 const printHTML = (html, container) => {
     container.innerHTML += html; 
+}
+
+const buttonClick = () => {
+    const modal = document.getElementById('myModal');
+    const span = document.getElementsByClassName('close')[0];
+    modal.style.display = 'block';
+    span.onclick = () => modal.style.display = 'none';
 }
 
 api( URL );
